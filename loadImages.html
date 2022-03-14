@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fashi/css/bootstrap.min.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <button id="btn" class="btn btn-warning">Load</button>
+        <div id="products">
+    
+        </div>
+    </div>
+    <script>
+        const loadProductImages = () => {
+        fetch('pix.php')
+            .then(res => res.json())
+            .then(products => {
+                output = '';
+                for (let product of products) {
+                    output += `
+                    `
+                }
+                document.querySelector('#products').innerHTML = output;
+            })
+        .catch(err => console.log(err))
+    }
+    const btn = document.querySelector('#btn').addEventListener('click', loadProductImages)
+    </script>
+</body>
+</html>
