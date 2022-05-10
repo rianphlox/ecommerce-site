@@ -13,7 +13,7 @@
     $password = htmlentities(trim($password))
 
 
-    $res = $db->createUser($username, $email, $password);
+    $res = $db->CreateUser($username, $email, $password);
     echo json_encode($res);
 
     ?>
